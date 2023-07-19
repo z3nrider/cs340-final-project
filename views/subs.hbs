@@ -1,0 +1,95 @@
+{{!-- Citation: https://github.com/osu-cs340-ecampus/nodejs-starter-app --}}
+
+
+<html>
+
+<head>
+  <title>Subscriptions</title>
+</head>
+
+<body>
+  <h1>Welcome to TD Memetrade</h1>
+
+  <h2>Our Subscribers</h2>
+
+  <div id="browse">
+    <table id="subs-table">
+      <thead>
+        <tr>
+          {{!{{#each data.[0]}}
+          <th>{{!{{@key}}Subscriber ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Subscribe Date</th>
+          <th>Assigned Analyst ID</th>
+          {{!{{/each}}
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each data}}
+        <tr>
+          <td>{{this.subscriberID}}</td>
+          <td>{{this.firstName}}</td>
+          <td>{{this.lastName}}</td>
+          <td>{{moment this.subscribeDate format="YYYY-MM-DD"}}</td>
+          <td>{{this.Analysts_analystID}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <div id="insert" style="display: block">
+      <form id="addSubAjax">
+        <legend><strong>Add Subscriber</strong></legend>
+        <fieldset class="fields">
+          <label for="firstName"> First Name </label> <input type="text" name="firstName" id="firstName"
+            placeholder="Warren" required></br>
+          <label for="lastName"> Last Name </label> <input type="text" name="lastName" id="lastName"
+            placeholder="Buffett" required></br>
+          <label for="subscribeDate"> Date of Subscription </label> <input type="date" name="subscribeDate"
+            id="subscribeDate" required></br>
+          <label for="inputAnalystID"> Assigned Analyst (Optional) </label> <select name="inputAnalystID"
+            id="inputAnalystID"></br>
+            <option value="test">Select an Analyst</option>
+            {{#each analysts}}
+            <option value="{{this.analystID}}">{{this.analystName}}</option>
+            {{/each}}
+          </select></br>
+        </fieldset>
+        <input class="btn" type="submit" id="addSub" value="Add a Subscriber">
+        <input class="btn" type="button" value="Cancel">
+      </form>
+      <!--add new stock-->
+      {{!-- Embed our javascript to handle the DOM manipulation and AJAX request --}}
+      <script src="./js/add_subscriber.js"></script>
+    </div><!-- insert -->
+    <p>&nbsp;</p>
+    <div id="update">
+      <form method="POST" id="updateSub">
+        <legend><strong>Update Subscriber's Analyst</strong></legend>
+        <fieldset class="fields">
+          <label> Subcriber's Last Name </label> <select name="input-subName" id="inputSubID">
+            <option value="test"> Select a subscriber </option>
+            {{#each data}}
+            <option value="{{this.subscriberID}}">{{this.lastName}}</option>
+            {{/each}}
+          </select></br>
+          <label> Provided Analyst </label> <select name="input-analystID" id="updateAnalystID">
+            <option value="">Select an Analyst</option>
+            <option value="">NULL</option>
+            {{#each analysts}}
+            <option value="{{this.analystID}}">{{this.analystName}}</option>
+            {{/each}}
+          </select>
+        </fieldset>
+        <input class="btn" type="submit" id="UpdateSaveSub" value="Update Subscriber">
+        <input class="btn" type="button" value="Cancel" onClick="browseSub()">
+      </form>
+      <script src="./js/update_sub.js"></script>
+    </div><!-- update -->
+    <p>&nbsp;</p>
+</body>
+<footer>&copy Kevin Riemer and Brandon Koehler 2023</footer>
+
+</html>

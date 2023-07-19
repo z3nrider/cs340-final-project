@@ -1,0 +1,30 @@
+{
+  "name": "team-meme-stock",
+  "version": "1.0.0",
+  "description": "CS 340 Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khriemer2596/Team-Meme-Stock.git"
+  },
+  "keywords": [
+    "TD",
+    "Memetrade"
+  ],
+  "author": "riemerk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khriemer2596/Team-Meme-Stock/issues"
+  },
+  "homepage": "https://github.com/khriemer2596/Team-Meme-Stock#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.7",
+    "forever": "^4.0.3",
+    "handlebars-helpers": "^0.10.0",
+    "mysql": "^2.18.1"
+  }
+}

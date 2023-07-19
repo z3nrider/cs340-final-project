@@ -1,0 +1,74 @@
+{{!-- Citation: https://github.com/osu-cs340-ecampus/nodejs-starter-app --}}
+
+
+<html>
+
+<head>
+  <title>Stocks Has Analysts</title>
+</head>
+
+<body>
+  <h1>Welcome to TD Memetrade</h1>
+
+  <h2>Stocks Has Analysts</h2>
+  <div id="browse">
+    <table id="stocks-has-analysts-table">
+      <thead>
+        <tr>
+          {{!{{#each data.[0]}}
+          <th>{{!{{@key}} Associated Stock ID</th>
+          <th>Associated Market Index ID</th>
+          <th>Associated Analyst ID</th>
+          <th>Rocket Rating</th>
+          {{!{{/each}}
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each data}}
+        <tr>
+          <td>{{this.Stocks_stockID}}</td>
+          <td>{{this.Stocks_MarketIndexes_indexID}}</td>
+          <td>{{this.Analysts_analystID}}</td>
+          <td>{{this.rocketRating}}</td>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+  </div> <!-- browse -->
+  <div id="insert">
+    <form method="POST" id="addStocksHasAnalystsAjax">
+      <legend><strong>Add Stock Has Analyst</strong></legend>
+      <fieldset class="fields">
+        <label> Stock </label> <select name="inputStockID" id="inputStockID">
+          <option value="test">Select a Stock</option>
+          {{#each stocks}}
+          <option value="{{this.stockID}}">{{this.stockName}}</option>
+          {{/each}}
+        </select></br>
+        <label> Same Stock </label> <select name="inputIndexID" id="inputIndexID">
+          <option value="test">Select Same Stock</option>
+          {{#each stocks}}
+          <option value="{{this.MarketIndexes_indexID}}">{{this.stockName}}</option>
+          {{/each}}
+        </select></br>
+        <label> Analyst </label> <select name="inputAnalystID" id="inputAnalystID">
+          <option value="test">Select an Analyst</option>
+          {{#each analysts}}
+          <option value="{{this.analystID}}">{{this.analystName}}</option>
+          {{/each}}
+        </select></br>
+        <label> Rocket Rating </label> <input class="num-input" type="number" name="inputRocketRating"
+          id="inputRocketRating" min="1" max="5"></br>
+      </fieldset>
+      <input class="btn" type="submit" id="addStocksHasAnalysts" value="Submit">
+      <input class="btn" type="button" value="Cancel">
+    </form>
+    <script src="./js/add_stocks_has_analysts.js"></script>
+  </div>
+</body>
+<footer>&copy Kevin Riemer and Brandon Koehler 2023</footer>
+
+</html>

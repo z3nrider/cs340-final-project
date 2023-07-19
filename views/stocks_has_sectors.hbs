@@ -1,0 +1,119 @@
+{{!-- Citation: https://github.com/osu-cs340-ecampus/nodejs-starter-app --}}
+
+
+<html>
+
+<head>
+  <title>Stocks Has Sectors</title>
+</head>
+
+<body>
+  <h1>Welcome to TD Memetrade</h1>
+
+  <h2>Stocks Has Market Sectors</h2>
+
+  <div id="browse">
+    <table id="stocks-has-sectors-table">
+      <thead>
+        <tr>
+          {{!{{#each data.[0]}}
+          <th>{{!{{@key}}Associated Stock ID</th>
+          <th>Associated Market Sector ID</th>
+          {{!{{/each}}
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each data}}
+        <tr>
+          <td>{{this.Stocks_stockID}}</td>
+          <td>{{this.MarketSectors_sectorID}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+  </div> <!-- browse -->
+  <div id="insert">
+    <form method="POST" id="addStocksHasSectorsAjax">
+      <legend><strong>Add Stock Has Sector</strong></legend>
+      <fieldset class="fields">
+        <label> Stock </label> <select name="inputStockID" id="inputStockID">
+          <option value="test">Select a stock</option>
+          {{#each stocks}}
+          <option value="{{this.stockID}}">{{this.stockName}}</option>
+          {{/each}}
+        </select></br>
+        <label> Sector </label> <select name="inputSectorID" id="inputSectorID">
+          <option value="test">Select a market sector</option>
+          {{#each sectors}}
+          <option value="{{this.sectorID}}">{{this.sectorName}}</option>
+          {{/each}}
+        </select></br>
+      </fieldset>
+      <input class="btn" type="submit" id="addStocksHasSectors" value="Submit">
+      <input class="btn" type="button" value="Cancel">
+    </form>
+    <script src="./js/add_stocks_has_sectors.js"></script>
+  </div><!-- insert -->
+  {{!-- <p>&nbsp;</p>
+  <div id="update">
+    <form method="POST" id="UpdateStocksHasSectors">
+      <legend><strong>Update Stock Has Sector</strong></legend>
+      <fieldset class="fields">
+        <input type="hidden" name="StocksHasSectorsID" id="updateStocksHasSectorsID" value="1">
+        <label> Stock ID </label> <select name="subID">
+          <option value="0">&nbsp;</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <label> Sector ID </label> <select name="sectorID">
+          <option value="0">&nbsp;</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </fieldset>
+      <input class="btn" type="submit" id="UpdateStocksHasSectors" value="Update Stock Has Sector">
+      <input class="btn" type="button" value="Cancel" onClick="browseStocksHasSectors()">
+    </form>
+  </div><!-- update -->
+  <p>&nbsp;</p>
+  <div id="delete" style="display: block">
+    <form method="POST" id="deleteStocksHasSectors">
+      <legend><strong>Delete Stock Has Sector</strong></legend>
+      <fieldset class="fields">
+        <p>Are you sure you wish to delete the following stock has sector?</p>
+        <input type="hidden" name="StocksHasSectorsID" id="deleteStocksHasSectorsID" value="1">
+        <label> Stock ID </label> <select name="stockID">
+          <option value="0">&nbsp;</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <label> Sector ID </label> <select name="sectorID">
+          <option value="0">&nbsp;</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+
+      </fieldset>
+      <input class="btn" type="submit" id="DeleteStocksHasSectors" value="Delete Stock Has Sector">
+      <input class="btn" type="button" value="Cancel" onClick="browseStocksHasSectors()">
+    </form>
+  </div><!-- delete -->
+  --}}
+</body>
+<footer>&copy Kevin Riemer and Brandon Koehler 2023</footer>
+
+</html>

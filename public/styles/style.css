@@ -1,0 +1,125 @@
+/* Source: https://www.w3schools.com/css/css_table.asp */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightsteelblue;
+    max-width: 1100px;
+    margin: auto;
+}
+
+img {
+    width: 150px;
+    margin: 20px;
+    padding: 10px;
+}
+
+#nav {
+    text-align: center;
+}
+
+#nav-instructions {
+    text-align: center;
+}
+
+h1 {
+    background-color: lightcyan;
+    text-align: center;
+    /* margin: 20px; */
+}
+
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td,
+th {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: green;
+    color: white;
+}
+
+form {
+    max-width: 450px;
+    margin: auto;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+input {
+    max-width: 150px;
+    margin-top: 10px;
+}
+
+.num-input {
+    max-width: 75px;
+}
+
+select {
+    margin-top: 10px;
+}
+
+.btn {
+    background-color: green;
+    /* Green */
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 11px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+.btn:hover {
+    background-color: white;
+    color: green;
+}
+
+.del-btn {
+    background-color: darkred;
+    /* Green */
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 11px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+.del-btn:hover {
+    background-color: white;
+    color: darkred;
+}
+
+footer {
+    background-color: lightcyan;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+}

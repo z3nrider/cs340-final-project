@@ -1,0 +1,57 @@
+{{!-- Citation: https://github.com/osu-cs340-ecampus/nodejs-starter-app --}}
+
+
+<html>
+
+<head>
+  <title>Analysts</title>
+</head>
+
+
+
+<body>
+  <h1>Welcome to TD Memetrade</h1>
+
+  <h2>Our Analysts</h2>
+  <table id="analysts-table">
+    <thead>
+      <tr>
+        {{!{{#each data.[0]}}
+        <th>{{!{{@key}}Analyst ID</th>
+        <th>Analyst Name</th>
+        {{!{{/each}}
+      </tr>
+    </thead>
+    <tbody>
+      {{#each data}}
+      <tr>
+        <td>{{this.analystID}}</td>
+        <td>{{this.analystName}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <script scr="./js/delete_analyst.js"></script>
+  <p>&nbsp;</p>
+
+  <div id="insert" style="display: block">
+    <form id="addAnalystAjax">
+      <legend><strong>Add Analyst</strong></legend>
+      <fieldset class="fields">
+        <label for="analystName"> Name </label> <input type="text" name="analystName" id="analystName" required>
+      </fieldset>
+      <input class="btn" type="submit" id="addAnalyst" value="Add an Analyst">
+      <input class="btn" type="button" value="Cancel">
+    </form>
+    <!--add new stock-->
+    {{!-- Embed our javascript to handle the DOM manipulation and AJAX request --}}
+    <script src="./js/add_analyst.js"></script>
+  </div>
+
+  <p>&nbsp;</p>
+
+
+</body>
+<footer>&copy Kevin Riemer and Brandon Koehler 2023</footer>
+
+</html>
